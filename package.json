@@ -1,14 +1,22 @@
 {
   "name": "spark-kiosk",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
+  "description": "Offline-first workplace feedback kiosk with a PIN-protected admin dashboard.",
+  "engines": {
+    "node": ">=20.9.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "eslint"
+    "start": "node scripts/start-standalone.mjs",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck && npm run build"
   },
   "dependencies": {
+    "lucide-react": "^1.66.0",
     "next": "16.4.4",
     "react": "19.3.0",
     "react-dom": "19.3.0"
